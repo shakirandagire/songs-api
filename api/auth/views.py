@@ -17,20 +17,20 @@ class RegisterView(Resource):
             }
         return make_response(jsonify(response), 201)
 
-# class LoginView(Resource):
-#     @use_args(user_args, locations=('json', 'form'))
-#     def post(self,args):
-#         user = Users.query.filter_by(id= id).first()
-#         new_user = Users(
-#             username= args['username'],
-#             password= args['password'],
-#         )
-#         if (new_user in user):
-#             response={'message':'User successfully logged in'
-#             }
-#             return make_response(jsonify(response), 200)
-#             new_user.save()
+class LoginView(Resource):
+    @use_args(user_args, locations=('json', 'form'))
+    def post(self,args):
+        user = Users.query.filter_by(id= id).first()
+        new_user = Users(
+            username= args['username'],
+            password= args['password'],
+        )
+        if (new_user in user):
+            response={'message':'User successfully logged in'
+            }
+            return make_response(jsonify(response), 200)
+            new_user.save()
         
-#         response={'message':'Wrong details'
-#             }
-#         return make_response(jsonify(response), 201)
+        response={'message':'Wrong details'
+            }
+        return make_response(jsonify(response), 201)
