@@ -11,7 +11,7 @@ class SongTestCase(unittest.TestCase):
 
     def setUp(self):
         """Stuff to do before every test."""
-        self.app = config_name="testing"
+        # self.app = config_name="testing"
         self.client = app.test_client()
         self.song = {'title': 'Listen',
                      'artist': 'Beyonce'}
